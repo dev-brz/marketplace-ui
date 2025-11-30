@@ -1,15 +1,16 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { StompExampleService } from './stomp-example.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-/*
-        // "@stomp/stompjs": "^7.2.0",
-        // "sockjs-client": "^1.6.1"
-        // "@types/sockjs-client": "^1.5.4",
-*/
+export class AppComponent implements OnInit {
+  stompExample = inject(StompExampleService);
+
+  ngOnInit(): void {
+    this.stompExample.run();
+  }
 }
