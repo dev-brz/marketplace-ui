@@ -30,6 +30,7 @@
     "angular-eslint": "21.0.1",
     "eslint": "^9.39.1",
     "jsdom": "^27.2.0",
+    "ng-openapi": "^0.2.9",
     "typescript": "~5.9.3",
     "typescript-eslint": "8.46.4",
     "vitest": "^4.0.14"

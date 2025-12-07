@@ -7,6 +7,7 @@ import stylistic from '@stylistic/eslint-plugin'
 export default defineConfig([
   {
     files: ["**/*.ts"],
+    ignores: ["src/api/**"],
     extends: [
       eslint.configs.recommended,
       tseslint.configs.recommended,
@@ -33,6 +34,14 @@ export default defineConfig([
           type: "element",
           prefix: "app",
           style: "kebab-case",
+        },
+      ],
+      "@angular-eslint/component-selector": [
+        "error",
+        {
+          type: "element",
+          prefix: "mkt",
+          style: "kebab-case"
         },
       ],
       "@stylistic/semi": ['error', 'always'],

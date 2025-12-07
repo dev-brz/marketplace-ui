@@ -1,0 +1,8 @@
+<ul>
+  @for (user of apiUsers(); track user.id) {
+    <!-- <li routerLink="chat" [queryParams]="{ rid: user.id }">{{ user.email }}</li> -->
+    <li>{{ user.email }}</li>
+  } @empty {
+    <li>No users present!</li>
+  }
+</ul>
