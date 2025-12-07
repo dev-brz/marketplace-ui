@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { StompExampleService } from './stomp-example.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  stompExample = inject(StompExampleService);
+
+  ngOnInit(): void {
+    this.stompExample.run();
+  }
 }
