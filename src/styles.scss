@@ -1,1 +1,26 @@
+@use '@angular/material' as mat;
+
+// Plus imports for other components in your app.
+
+@include mat.core();
+
+$marketplace-primary: mat.define-palette(mat.$teal-palette);
+$marketplace-accent: mat.define-palette(mat.$lime-palette, A200, A100, A400);
+$marketplace-warn: mat.define-palette(mat.$red-palette);
+
+$marketplace-theme: mat.define-light-theme((
+  color: (
+    primary: $marketplace-primary,
+    accent: $marketplace-accent,
+    warn: $marketplace-warn,
+  )
+));
+
+@include mat.all-component-themes($marketplace-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+* { box-sizing: border-box }
+html, body { height: 100%; box-sizing: border-box }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
